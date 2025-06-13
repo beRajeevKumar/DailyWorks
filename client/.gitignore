@@ -7,32 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Dependency directories
-node_modules/
-
-# Vite build output
+node_modules
 dist
 dist-ssr
-
-# Environment variables
-# Ignore all .env files by default, except for templates
-.env
-.env.*
-!.env.example
-!.env.sample
-# Your *.local already covers .env.local, .env.development.local etc.
-# but explicit can be clearer:
-.env.local
-.env.development.local
-.env.production.local
-.env.test.local
-
-# Test coverage
-/coverage
+*.local
 
 # Editor directories and files
 .vscode/*
-!.vscode/settings.json
 !.vscode/extensions.json
 .idea
 .DS_Store

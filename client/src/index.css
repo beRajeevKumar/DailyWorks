@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles for React Day Picker */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-caption-font-size: 1rem;
+  --rdp-accent-color: var(
+    --color-primary
+  ); /* Uses our primary color from theme */
+  --rdp-background-color: transparent;
+  --rdp-accent-color-dark: var(--color-primary);
+  --rdp-background-color-dark: transparent;
+  --rdp-outline: 2px solid var(--rdp-accent-color);
+  --rdp-outline-selected: 2px solid var(--rdp-accent-color);
+  --rdp-font-family: "Inter", sans-serif;
+  margin: 1em 0;
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: #2a2a2a; /* Slightly lighter surface for hover */
+}
+
+.rdp-day_today {
+  color: #a3e635; /* Our primary color for today's date */
+  font-weight: bold;
+}
+
+.rdp-day_selected,
+.rdp-day_selected:focus-visible,
+.rdp-day_selected:hover {
+  background-color: #a3e635;
+  color: #121212; /* Dark text on primary background */
+}
+
+.rdp-caption_label {
+  font-weight: bold;
+  color: #e5e7eb; /* text-primary */
+}
+
+.rdp-head_cell,
+.rdp-day {
+  color: #9ca3af; /* text-secondary */
+}
+
+.rdp-nav_button {
+  color: #9ca3af;
+}
