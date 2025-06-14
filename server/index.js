@@ -39,8 +39,6 @@ app.get(["/", "/login", "/signup"], (req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
 });
 
-console.log(path.resolve(__dirname, "client", "dist", "index.html"));
-
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => {
