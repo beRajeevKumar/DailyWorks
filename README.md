@@ -1,4 +1,4 @@
-# DailyWorks — Task Management Dashboard
+# DailyWorks — Streamline Your Daily Workflow!
 
 DailyWorks is a modern, full-stack task management application designed to help users streamline their daily workflow. This project was built as a developer assignment and showcases a complete range of skills from backend API design to a polished, responsive React frontend.
 
@@ -6,8 +6,7 @@ DailyWorks is a modern, full-stack task management application designed to help 
 
 ### ✨ Live Demo
 
-- **Frontend Application:** [https://dailyworks.vercel.app](https://dailyworks.vercel.app)
-- **Backend API:** [https://dailyworks-api.onrender.com](https://dailyworks-api.onrender.com)
+- **Visit Application Live:** [https://dailyworks-vl43.onrender.com/](https://dailyworks-vl43.onrender.com/)
 
 ---
 
@@ -34,23 +33,27 @@ DailyWorks is a modern, full-stack task management application designed to help 
 
 ### 📸 Screenshots
 
-_Insert your best screenshots here. You can drag and drop them into the GitHub text editor._
-
-![Login Page](link_to_your_login_screenshot.png)
-![Dashboard](link_to_your_dashboard_screenshot.png)
+![Login Page](./client/src/assets/login_page.png)
+![Dashboard](./client/src/assets/dashboard.png)
 
 ---
 
-### local-development' Local Development
+### Locally Project SetUp:—
 
 To run this project locally:
 
-1.  Clone the repository: `git clone <your_repo_url>`
+1.  Clone the repository:
+
+    ```bash
+    git clone your-repo-url
+    cd dailyworks
+    ```
+
 2.  **Backend Setup:**
     ```bash
     cd server
     npm install
-    # Create a .env file with MONGO_URI and JWT_SECRET
+    # Create a .env file with MONGO_URL and JWT_SECRET
     npm start
     ```
 3.  **Frontend Setup:**
@@ -59,3 +62,18 @@ To run this project locally:
     npm install
     npm run dev
     ```
+
+---
+
+### 📝 License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+### 📫 Contact
+
+For any questions or contributions, feel free to reach out:
+
+- **Email:** [work.rajeevkumar@gmail.com ](mailto:work.rajeevkumar@gmail.com)
+- **GitHub:** [Rajeev Kumar](https://github.com/beRajeevKumar)
+- **LinkedIn:** [Rajeev Kumar](https://www.linkedin.com/in/berajeevkumar/)
+- **Twitter:** [@be_rajeevkumar](https://twitter.com/be_rajeevkumar)
