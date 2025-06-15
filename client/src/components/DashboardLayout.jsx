@@ -9,9 +9,22 @@ const DashboardLayout = ({
   onStopTimer,
 }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen bg-background text-text-primary flex">
-      <Sidebar isSidebarOpen={isSidebarOpen} />
+      {isSidebarOpen && (
+        <div
+          onClick={() => setIsSidebarOpen(false)}
+          className="fixed inset-0 bg-black bg-opacity-50 z-20 lg:hidden"
+          aria-hidden="true"
+        ></div>
+      )}
+
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        closeSidebar={() => setIsSidebarOpen(false)}
+      />
+
       <div className="flex-1 flex flex-col lg:ml-64">
         <Header
           onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)}

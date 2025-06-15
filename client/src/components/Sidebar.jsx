@@ -1,9 +1,17 @@
 import { NavLink } from "react-router-dom";
-import { LayoutDashboard, Inbox, Settings, LogOut } from "lucide-react";
+import { LayoutDashboard, Inbox, Settings, LogOut, X } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
 
-const Sidebar = ({ isSidebarOpen }) => {
+const Sidebar = ({ isSidebarOpen, closeSidebar }) => {
   const { logout } = useAuth();
+
+  const handleLogout = () => {
+    if (closeSidebar) {
+      closeSidebar();
+    }
+    logout();
+  };
+
   return (
     <aside
       className={`
@@ -13,9 +21,17 @@ const Sidebar = ({ isSidebarOpen }) => {
         ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
       `}
     >
-      <div className="p-6">
+      <div className="p-6 flex items-center justify-between">
         <h1 className="text-2xl font-bold text-white">DailyWorks</h1>
+        <button
+          onClick={closeSidebar}
+          className="lg:hidden text-text-secondary hover:text-white"
+          aria-label="Close sidebar"
+        >
+          <X size={24} />
+        </button>
       </div>
+
       <nav className="flex-1 px-4">
         <ul>
           <li>
@@ -23,23 +39,31 @@ const Sidebar = ({ isSidebarOpen }) => {
               to="/"
               icon={<LayoutDashboard size={20} />}
               label="Dashboard"
+              onClick={closeSidebar}
             />
           </li>
           <li>
-            <SidebarLink to="/inbox" icon={<Inbox size={20} />} label="Inbox" />
+            <SidebarLink
+              to="/inbox"
+              icon={<Inbox size={20} />}
+              label="Inbox"
+              onClick={closeSidebar}
+            />
           </li>
           <li>
             <SidebarLink
               to="/settings"
               icon={<Settings size={20} />}
               label="Settings"
+              onClick={closeSidebar}
             />
           </li>
         </ul>
       </nav>
-      <div className="p-4">
+
+      <div className="p-4 mt-auto">
         <button
-          onClick={logout}
+          onClick={handleLogout}
           className="w-full flex items-center space-x-2 p-2 rounded-lg text-text-secondary hover:bg-gray-700 hover:text-white transition-colors"
         >
           <LogOut size={20} />
@@ -50,7 +74,7 @@ const Sidebar = ({ isSidebarOpen }) => {
   );
 };
 
-const SidebarLink = ({ to, icon, label }) => {
+const SidebarLink = ({ to, icon, label, onClick }) => {
   const baseClasses =
     "flex items-center space-x-3 p-2 rounded-lg transition-colors my-1 w-full";
   const activeClasses = "bg-primary text-background";
@@ -60,6 +84,7 @@ const SidebarLink = ({ to, icon, label }) => {
   return (
     <NavLink
       to={to}
+      onClick={onClick}
       className={({ isActive }) =>
         `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`
       }
